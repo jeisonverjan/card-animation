@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            keyframes: {
+              slowSpin: {
+                from: {
+                  transform: "rotate(0deg)",
+                },
+                to: {
+                  transform: "rotate(360deg)",
+                },
+              },
+              slowPulse: {
+                from: {
+                  transform: "scale(0.9)",
+                  opacity: 1,
+                },
+                to: {
+                  transform: "scale(1.8)",
+                  opacity: 0,
+                },
+              },
+            },
+            animation: {
+              slowSpin: "slowSpin 3s linear infinite",
+              slowPulse: "slowPulse 1s linear infinite",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="grid place-content-center h-screen w-full bg-[#e8e8e8]">
+    <div
+      class="relative w-[190px] h-[254px] bg-[#07182E] grid place-content-center rounded-xl overflow-hidden"
+    >
+      <div
+        class="absolute w-[150px] h-[130%] top-[-30px] bg-gradient-to-b from-[rgb(0,183,255)] to-[rgb(255,48,255)] right-5 animate-slowSpin"
+      ></div>
+      <h2 class="uppercase text-4xl text-white z-10">card</h2>
+      <div class="absolute bg-[#07182E] inset-[5px] rounded-xl"></div>
+    </div>
+  </body>
+</html>
